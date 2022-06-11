@@ -692,6 +692,98 @@ ul {
 }
 /* End Team */
 
+/* Start Services */
+.services {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.services .box {
+  background-color: white;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  counter-increment: services;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: var(--main-transition);
+}
+.services .box:hover {
+  transform: translateY(-10px);
+}
+.services .box::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 0;
+  height: 3px;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--main-transition);
+}
+.services .box:hover::before {
+  width: 100%;
+}
+.services .box i {
+  color: #888;
+  display: block;
+  margin: 30px 10px 20px;
+  text-align: center;
+}
+.services .box p {
+  color: var(--main-color);
+  font-size: 1.6em;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.services .box .info {
+  padding: 15px;
+  position: relative;
+  background-color: #f8f8f8;
+}
+.services .box .info a {
+  text-align: right;
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.services .box .info::before {
+  content: "0" counter(services);
+  position: absolute;
+  background-color: var(--main-color);
+  width: 80px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  padding-right: 20px;
+}
+.services .box .info::after {
+  content: "";
+  background-color: #d1d1d1;
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  left: 80px;
+  transform: skewX(-30deg);
+}
+/* End Services */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
