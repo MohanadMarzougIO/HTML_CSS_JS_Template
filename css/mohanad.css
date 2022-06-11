@@ -1348,6 +1348,111 @@ ul {
 }
 /* End Stats */
 
+/* Start Discount */
+.discount {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+.discount .image {
+  position: relative;
+  background-image: url(../images/discount-background1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-basis: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  animation: change-background 10s linear infinite;
+}
+@media (max-width: 991px) {
+  .discount .image {
+    flex-basis: 100%;
+  }
+}
+.discount .image::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(33 150 243 / 96%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.discount .image p {
+  max-width: 500px;
+  margin: auto;
+  font-size: 1.2em;
+  color: #fff;
+  line-height: 1.6;
+  font-weight: bold;
+}
+.discount .image img {
+  max-width: 100%;
+  width: 300px;
+}
+.discount .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+}
+@media (max-width: 991px) {
+  .discount .form {
+    flex-basis: 100%;
+  }
+}
+.discount .form form {
+  max-width: 350px;
+  width: 100%;
+  margin: 10px auto 20px;
+}
+.discount .form .input {
+  display: block;
+  border: none;
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #ddd;
+  padding: 20px;
+  width: 100%;
+  margin: 20px auto;
+}
+.discount .form .input:focus {
+  outline: none;
+}
+.discount .form textarea.input {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  caret-color: var(--main-color);
+}
+.discount .form input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.discount .form input[type="submit"]:hover {
+  background-color: var(--main-color-alt);
+}
+.discount .content {
+  text-align: center;
+}
+.discount .content h2 {
+  font-size: 2.5em;
+  margin: 50px 10px 25px;
+  letter-spacing: -1px;
+}
+/* End Discount */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
@@ -1418,6 +1523,16 @@ ul {
     width: 200%;
     height: 200%;
     opacity: 0;
+  }
+}
+
+@keyframes change-background {
+  0%,
+  100% {
+    background-image: url("../images/discount-background1.jpg");
+  }
+  50% {
+    background-image: url("../images/discount-background2.jpg");
   }
 }
 /* End Animation */
