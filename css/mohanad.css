@@ -842,6 +842,85 @@ ul {
 }
 /* End Our Skills */
 
+/* Start Work Steps */
+.work-steps {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+.work-steps .container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+@media (max-width: 991px) {
+  .work-steps .container {
+    flex-direction: column;
+  }
+  .work-steps .steps {
+    margin-top: 30px;
+  }
+}
+.work-steps .image {
+  width: 450px;
+  max-width: 100%;
+}
+.work-steps .steps .box {
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .work-steps .steps .box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.work-steps .steps .box::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  background-color: #e7e7e7;
+  border: 1px solid white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.work-steps .steps .box:hover:before {
+  width: 100%;
+  height: 100%;
+}
+.work-steps .steps .box img {
+  width: 80px;
+  height: 80px;
+  margin-right: 40px;
+}
+@media (max-width: 767px) {
+  .work-steps .steps .box img {
+    margin: 0 0 30px;
+  }
+}
+.work-steps .steps .box .text h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.work-steps .steps .box .text p {
+  color: #777;
+  line-height: 1.8;
+}
+/* End Work Steps */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
