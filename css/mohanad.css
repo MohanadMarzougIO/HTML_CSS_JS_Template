@@ -1453,6 +1453,132 @@ ul {
 }
 /* End Discount */
 
+/* Start Footer */
+.footer {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: #191919;
+  color: white;
+}
+@media (max-width: 767px) {
+  .footer {
+    text-align: center;
+  }
+}
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+.footer .box h3 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.footer .box .social {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .footer .box .social {
+    justify-content: center;
+  }
+}
+.footer .box .social li {
+  display: inline-flex;
+}
+.footer .box .social li a {
+  background-color: #444;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--main-transition);
+}
+.footer .box .social li:hover a.facebook {
+  background-color: #0079d5;
+}
+.footer .box .social li:hover a.twitter {
+  background-color: #0099ff;
+}
+.footer .box .social li:hover a.youtube {
+  background-color: #ff1400;
+}
+.footer .box .social li i {
+  color: #f1f1f1;
+}
+.footer .box .text {
+  line-height: 1.6;
+  font-size: 1.1em;
+  color: #999;
+}
+.footer .box .links li:not(:last-child) {
+  border-bottom: 1px solid #444;
+}
+.footer .box .links li a {
+  display: block;
+  color: #999;
+  padding: 15px 10px;
+  transition: var(--main-transition);
+}
+.footer .box .links li a::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F101";
+  font-weight: 900;
+  margin-right: 10px;
+  color: var(--main-color);
+}
+.footer .box .links li:hover a {
+  padding-left: 20px;
+  color: white;
+}
+.footer .box .line {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  padding: 10px 0;
+}
+.footer .box .line i {
+  color: var(--main-color);
+  font-size: 1.8em;
+  margin-right: 10px;
+}
+@media (max-width: 767px) {
+  .footer .box .line {
+    flex-direction: column;
+  }
+  .footer .box .line i {
+    margin: 0 0 20px;
+  }
+}
+.footer .box .line .info {
+  line-height: 1.6;
+  font-size: 1em;
+  color: #999;
+  flex: 1;
+}
+.footer .box .line .info span {
+  display: block;
+}
+.footer .gallery-group img {
+  max-width: 100%;
+  width: 78px;
+  margin: 2px;
+  border: 3px solid white;
+}
+.copyright {
+  background-color: #191919;
+  color: white;
+  padding: 25px 10px;
+  margin: 0;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-size: 1.1em;
+}
+/* End Footer */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
