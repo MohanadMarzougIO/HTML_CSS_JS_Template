@@ -91,6 +91,58 @@ ul {
   z-index: -1;
   animation: right-move 0.5s linear forwards;
 }
+
+.spikes-up,
+.spikes-down
+ {
+  position: relative;
+}
+.spikes-up::after, 
+.spikes-down::after 
+{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  right: 0;
+  z-index: 1;
+}
+.spikes-up::after {
+  background-image: linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+.spikes-down::after {
+  background-image: linear-gradient(
+      135deg,
+      var(--section-background) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, var(--section-background) 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+.dots {
+  background-image: url("../images/dots.png");
+  width: 204px;
+  height: 186px;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: none;
+}
+@media (min-width: 1200px) {
+  .dots {
+    display: block;
+  }
+}
+.dots-up {
+  top: 200px;
+  right: 0;
+}
+.dots-down {
+  bottom: 200px;
+  left: 0;
+}
 /* End Globle Rules */
 
 /* Start Header */
