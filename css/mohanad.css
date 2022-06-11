@@ -921,6 +921,272 @@ ul {
 }
 /* End Work Steps */
 
+/* Start Event */
+.event {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+.event .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.event .container > img {
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  animation: up-and-down 5s linear infinite;
+}
+@media (max-width: 991px) {
+  .event .container > img {
+    margin: 20px auto;
+  }
+}
+.event .info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 100%;
+}
+.event .info .time {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.event .info .time .unit {
+  border: 2px solid #d5d5d5;
+  border-radius: 10px;
+  width: 80px;
+  transition: var(--main-transition);
+}
+.event .info .time .unit:hover {
+  border-color: var(--main-color);
+}
+.event .info .time .unit span {
+  display: block;
+  text-align: center;
+}
+.event .info .time .unit span:first-child {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--main-color);
+  padding: 15px 10px;
+}
+.event .info .time .unit span:last-child {
+  border-top: 1px solid #d5d5d5;
+  font-size: 0.8em;
+  padding: 10px;
+}
+.event .info .title {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 35px 0px 20px;
+}
+.event .info .description {
+  color: #777;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 20px;
+  font-weight: 800;
+  margin: 0;
+}
+.event .subscribe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.event .subscribe form {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  padding: 25px 30px;
+  border-radius: 126px;
+  width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 767px) {
+  .event .subscribe form {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+.event .subscribe input[type="text"] {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  flex: 1;
+  outline: none;
+  caret-color: var(--main-color);
+}
+.event .subscribe input[type="text"]::placeholder {
+  transition: opacity var(--main-transition);
+}
+.event .subscribe input[type="text"]:focus::placeholder {
+  opacity: 0;
+}
+.event .subscribe input[type="submit"] {
+  padding: 20px;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  margin-left: 20px;
+  border-radius: 40px;
+  transition: var(--main-transition);
+}
+.event .subscribe input[type="submit"]:hover {
+  background-color: var(--main-color-alt);
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .event .subscribe input[type="text"],
+  .event .subscribe input[type="submit"] {
+    border-radius: 0;
+    max-width: 100%;
+  }
+  .event .subscribe input[type="submit"] {
+    font-size: 1.3em;
+    margin: 20px 0;
+  }
+}
+/* End Event */
+
+/* Start Pricing */
+.pricing {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.pricing .box {
+  background-color: white;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pricing .box::before,
+.pricing .box::after {
+  content: "";
+  width: 0;
+  height: 50%;
+  position: absolute;
+  background-color: #f7f7f7;
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.pricing .box::before {
+  top: 0;
+  left: 0;
+}
+.pricing .box::after {
+  bottom: 0;
+  right: 0;
+}
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .pricing .box.popular {
+    top: -30px;
+  }
+}
+.pricing .box.popular .label {
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1.3em;
+  writing-mode: vertical-lr;
+  padding: 10px 10px 35px 10px;
+  position: absolute;
+  right: 25px;
+  width: 40px;
+}
+.pricing .box.popular .label::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 20px;
+  border-color: transparent transparent white;
+  bottom: -1px;
+  left: 0;
+  transition: var(--main-transition);
+}
+.pricing .box.popular:hover .label::before {
+  border-color: transparent transparent #f7f7f7;
+}
+.pricing .box .title {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+.pricing .box > img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+.pricing .box .price {
+  text-align: center;
+  margin: 30px 0;
+}
+.pricing .box .price .amount {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--main-color);
+  display: block;
+  margin: 10px 0;
+}
+.pricing .box .price .time {
+  font-weight: bold;
+  color: #777;
+}
+
+.pricing .box ul li {
+  padding: 15px;
+  border-top: 1px solid #f1f1f1;
+  font-size: 1.1em;
+}
+.pricing .box ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  margin-right: 10px;
+  font-weight: 900;
+  color: var(--main-color);
+}
+.pricing .box > a {
+  display: block;
+  background-color: transparent;
+  color: var(--main-color);
+  padding: 15px;
+  width: fit-content;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: 2px solid var(--main-color);
+  margin: 30px auto 40px;
+  border-radius: 5px;
+  transition: var(--main-transition);
+}
+.pricing .box > a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+/* End Pricing */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
